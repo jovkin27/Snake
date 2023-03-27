@@ -8,22 +8,22 @@ namespace Snake
 {
     class FoodCreator
     {
-        int mapW;
-        int mapH;
-        char sym;
+        private int mapWidth;
+        private int mapHeight;
+        private char sym;
         ConsoleColor color;
         Random rand = new Random();
-        public FoodCreator(int mapW, int mapH, char sym, ConsoleColor color_)
+        public FoodCreator(int mapWidth, int mapHeight, char sym, ConsoleColor color_)
         {
-            this.mapW = mapW;
-            this.mapH = mapH;
+            this.mapWidth = mapWidth;
+            this.mapHeight = mapHeight;
             this.sym = sym;
             color = color_;
         }
         public Point CreateFood()
         {
-            int x = rand.Next(2, mapH - 2);
-            int y = rand.Next(2, mapH - 2);
+            int x = rand.Next(2, mapWidth - 2);
+            int y = rand.Next(2, mapHeight - 2);
             return new Point(x, y, sym, color);
         }
     }
