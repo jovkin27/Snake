@@ -17,7 +17,7 @@ namespace Snake
             pList = new List<Point>();
             for (int i = 0; i < length; i++)
             {
-                Point p = new Point(tail, ConsoleColor.Red);
+                Point p = new Point(tail, ConsoleColor.Blue);
                 p.Move(i, direction);
                 pList.Add(p);
             }
@@ -61,6 +61,21 @@ namespace Snake
                 direction = Direction.UP;
             }
 
+        }
+
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }    
 }
