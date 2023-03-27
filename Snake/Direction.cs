@@ -12,6 +12,5 @@ namespace Snake
         RIGHT,
         UP,
         DOWN,
-        PAUSE
     }
 }
