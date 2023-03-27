@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Walls
+    class Walls //Границы игрового поля 
     {
         List<Figure> wallList;
 

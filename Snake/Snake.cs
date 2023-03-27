@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Snake
+namespace Snake //умения и свойства змейки
 {
     class Snake : Figure
     {
@@ -22,7 +22,7 @@ namespace Snake
                 pList.Add(p);
             }
         }
-        internal void Move()
+        internal void Move() //передвижение по полю
         {
             {
                 Point tail = pList.First();
@@ -42,7 +42,7 @@ namespace Snake
             return nextPoint;
         }
 
-        internal bool IsHitTail()
+        internal bool IsHitTail() //удар об хвост
         {
             var head = pList.Last();
             for (int i = 0; i < pList.Count - 2; i++)
@@ -53,7 +53,7 @@ namespace Snake
             return false;
         }
 
-        public void HandleKey(ConsoleKey key)
+        public void HandleKey(ConsoleKey key) //управление
         {
             if (key == ConsoleKey.LeftArrow)
             {
@@ -74,7 +74,7 @@ namespace Snake
 
         }
 
-        internal bool Eat(Point food)
+        internal bool Eat(Point food) //кушать 
         {
             Point head = GetNextPoint();
             if (head.IsHit(food))

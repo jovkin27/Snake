@@ -5,7 +5,7 @@ using WMPLib;
 
 namespace Snake
 {
-    public class Sounds
+    public class Sounds //звуки
     {
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         private string pathToMedia;

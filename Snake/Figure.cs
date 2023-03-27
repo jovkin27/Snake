@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Figure
+    class Figure //глава наследства
     {
         protected List<Point> pList;
         public void Draw()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class Point
+    class Point //точки
     {
         public int x;
         public int y;
