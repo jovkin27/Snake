@@ -13,25 +13,34 @@ namespace Snake
     {
 
         //int ymap = 0;
-        public void game_draw(int ymap)
+        public void Main(string[] args)
         {
-            Console.Clear();
-            Console.Title = "Snake";
-            Console.SetWindowSize(ymap, 26);
-            HorizontalLIne upline = new HorizontalLIne(0, ymap - 1, 0, '+');
-            HorizontalLIne downline = new HorizontalLIne(0, ymap - 1, 25, '+');
-            VerticalLine leftline = new VerticalLine(1, 25, 0, '+');
-            VerticalLine rightline = new VerticalLine(1, 25, ymap - 1, '+');
+            HorizontalLIne upline = new HorizontalLIne(0, 78 , 0, '+');
+            HorizontalLIne downline = new HorizontalLIne(0,78, 25, '+');
+            VerticalLine leftline = new VerticalLine(0, 25, 0, '+');
+            VerticalLine rightline = new VerticalLine(0, 25, 78, '+');
             upline.Draw();
             downline.Draw();
             leftline.Draw();
             rightline.Draw();
 
-            Point p = new Point(4, 5, '*', ConsoleColor.Red);
+            Point p = new Point(4, 5, '*', ConsoleColor.Blue);
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                Thread.Sleep( 100 );
+                snake.Move();
+            }
            
         }
+
     }
 
 

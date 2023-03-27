@@ -47,10 +47,7 @@ namespace Snake
             {
                 y = y + offset;
             }
-            else if (direction == Direction.PAUSE)
-            {
 
-            }
 
         }
 
