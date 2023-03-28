@@ -33,7 +33,7 @@ namespace Snake
 
             Score score = new Score(0);
             score.ScoreWrite();
-
+            int scoreresults = 0;
             while (true)
             {
                 if (walls.Ishit(snake) || snake.IsHitTail())
@@ -45,7 +45,6 @@ namespace Snake
                     Console.WriteLine("<------------------>");
                     Console.Write("Enter your name:\n ");
                     string name = Console.ReadLine();
-                    Console.WriteLine(name);
                     if (name.Length < 3)
                     {
                         Console.WriteLine("Name should be at least 3 letters");
@@ -56,11 +55,12 @@ namespace Snake
                         MyFileWriter writer = new MyFileWriter();
                         writer.WriteNameToFile(name);
                         writer.ShowResults();
+                        score.ScoreWrite();
                     }
                 }
                 if (snake.Eat(food))
                 {
-                    score.ScoreUp();
+                    scoreresults = score.ScoreUp();
                     score.ScoreWrite();
                     Console.Beep();
                     food = foodCreator.CreateFood();

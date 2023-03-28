@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,6 +12,7 @@ namespace Snake //умения и свойства змейки
     class Snake : Figure
     {
         public Direction direction;
+        int Snakescore;
 
         public Snake(Point tail, int length, Direction _direction)
         {
@@ -94,6 +96,24 @@ namespace Snake //умения и свойства змейки
             else
             {
                 return false;
+            }
+        }
+        public class Score
+        {
+            private int score;
+            public Score(int score)
+            {
+                this.score = score;
+            }
+            public int ScoreUp()
+            {
+                score += 1;
+                return score;
+            }
+            public void ScoreWrite()
+            {
+                Console.SetCursorPosition(90, 10);
+                Console.WriteLine("Score:" + score.ToString());
             }
         }
     }    

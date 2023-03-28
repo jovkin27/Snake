@@ -10,15 +10,14 @@ namespace Snake
     public class Score
     {
         private int score;
-        protected List<int> sList;
         public Score(int score)
         {
             this.score = score;
         }
-        public void ScoreUp()
+        public int ScoreUp()
         {
             score += 1;
-            sList.Add(score);
+            return score;
         }
         public void ScoreWrite()
         {
