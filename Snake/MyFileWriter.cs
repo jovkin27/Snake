@@ -10,13 +10,14 @@ namespace Snake
     class MyFileWriter
     {
         string name;
+        int score;
 
-        public void WriteNameToFile(string name)
+        public void WriteNameToFile(string name, int score)
         {
 
             using (StreamWriter writer = new StreamWriter("results.txt",true))
             {
-                writer.WriteLine(name);
+                writer.WriteLine(name + score);
             }
 
             Console.WriteLine("Имя успешно добавлено в файл.");

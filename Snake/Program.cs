@@ -45,6 +45,7 @@ namespace Snake
                     Console.WriteLine("<------------------>");
                     Console.Write("Enter your name:\n ");
                     string name = Console.ReadLine();
+                    int scoreres = Score();
                     if (name.Length < 3)
                     {
                         Console.WriteLine("Name should be at least 3 letters");
@@ -53,7 +54,7 @@ namespace Snake
                     else
                     {
                         MyFileWriter writer = new MyFileWriter();
-                        writer.WriteNameToFile(name);
+                        writer.WriteNameToFile(name, score);
                         writer.ShowResults();
                         score.ScoreWrite();
                     }
