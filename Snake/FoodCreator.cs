@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class FoodCreator
+    class FoodCreator //еда и её появление 
     {
         private int mapWidth;
         private int mapHeight;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,21 +56,28 @@ namespace Snake //умения и свойства змейки
 
         public void HandleKey(ConsoleKey key) //управление
         {
+            Parametrs settings = new Parametrs();
+            Sounds sound = new Sounds(settings.GetResourceFolder());
+
             if (key == ConsoleKey.LeftArrow)
             {
                 direction = Direction.LEFT;
+                sound.PlayEat();
             }
             else if (key == ConsoleKey.RightArrow)
             {
                 direction = Direction.RIGHT;
+                sound.PlayEat();
             }
             else if (key == ConsoleKey.DownArrow)
             {
                 direction = Direction.DOWN;
+                sound.PlayEat();
             }
             else if (key == ConsoleKey.UpArrow)
             {
                 direction = Direction.UP;
+                sound.PlayEat();
             }
 
         }

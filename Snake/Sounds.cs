@@ -25,13 +25,13 @@ namespace Snake
         }
         public void Stop(string sound)
         {
-            player.URL = pathToMedia + "lost.mp3";
+            player.URL = pathToMedia + sound + ".mp3";
             player.controls.stop();
         }
         public void PlayEat()
         {
             player.URL = pathToMedia + "click.mp3";
-            player.settings.volume = 100;
+            player.settings.volume = 40;
             player.controls.play();
         }
     }
