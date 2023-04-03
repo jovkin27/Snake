@@ -25,7 +25,7 @@ namespace Snake
         {
             player.URL = pathToMedia + "click.mp3";
             player.settings.volume = 40;
-            player.controls.play();
+            //player.controls.play();
         }
 
         public void Play(string sound)

@@ -63,22 +63,22 @@ namespace Snake //умения и свойства змейки
             if (key == ConsoleKey.LeftArrow)
             {
                 direction = Direction.LEFT;
-                sound.Movement();
+                //sound.Movement();
             }
             else if (key == ConsoleKey.RightArrow)
             {
                 direction = Direction.RIGHT;
-                sound.Movement();
+                //sound.Movement();
             }
             else if (key == ConsoleKey.DownArrow)
             {
                 direction = Direction.DOWN;
-                sound.Movement();
+                //sound.Movement();
             }
             else if (key == ConsoleKey.UpArrow)
             {
                 direction = Direction.UP;
-                sound.Movement();
+                //sound.Movement();
             }
 
         }
