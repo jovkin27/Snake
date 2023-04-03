@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    public class MyFileWriter
+    public class MyFileWriter //записывает имя и очки в тхт файл
     {
         public void WriteNameAndScoreToFile(string name, int score)
         {
@@ -17,7 +17,7 @@ namespace Snake
             }
         }
 
-        public void ShowResults()
+        public void ShowResults() //показывает их
         {
             Console.WriteLine("Results:");
             Console.WriteLine("--------");

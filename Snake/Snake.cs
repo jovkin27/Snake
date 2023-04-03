@@ -14,7 +14,7 @@ namespace Snake //умения и свойства змейки
         public Direction direction;
         int Snakescore;
 
-        public Snake(Point tail, int length, Direction _direction)
+        public Snake(Point tail, int length, Direction _direction) //хвост
         {
             direction = _direction;
             pList = new List<Point>();
@@ -37,7 +37,7 @@ namespace Snake //умения и свойства змейки
             }
 
         }
-        public Point GetNextPoint()
+        public Point GetNextPoint() //бошка
         {
             Point head = pList.Last();
             Point nextPoint = new Point(head, ConsoleColor.Red);

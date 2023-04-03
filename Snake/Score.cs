@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    public class Score
+    public class Score //Очки
     {
         private int score;
         public Score(int score)

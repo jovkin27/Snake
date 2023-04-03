@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    public class Start
+    public class Start //стар меню, выбор размера поля и конец игры
     {
         public ConsoleKeyInfo key;
         public Start()

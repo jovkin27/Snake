@@ -30,7 +30,7 @@ namespace Snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
-            FoodCreator foodCreator = new FoodCreator(80, 25, '@', ConsoleColor.Green);
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$', ConsoleColor.Green);
             Point food = foodCreator.CreateFood();
             food.Draw();
 
@@ -67,6 +67,7 @@ namespace Snake
                 }
                 if (snake.Eat(food))
                 {
+                    Console.Beep();
                     //eat.Play("numnum.mp3");
                     score.ScoreUp();
                     score.ScoreWrite(90,10);
