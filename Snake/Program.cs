@@ -35,7 +35,7 @@ namespace Snake
             food.Draw();
 
             Score score = new Score(0);
-            score.ScoreWrite(120,10);
+            score.ScoreWrite(106,5);
 
             while (true)
             {
@@ -71,7 +71,7 @@ namespace Snake
                     Console.Beep();
                     //eat.Play("numnum.mp3");
                     score.ScoreUp();
-                    score.ScoreWrite(90,10);
+                    score.ScoreWrite(106,5);
                     food = foodCreator.CreateFood();
                     food.Draw();
                 }
