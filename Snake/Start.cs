@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Snake
@@ -13,6 +14,21 @@ namespace Snake
         {
         }
         int valik = 0;
+        public void Game_stop()
+        {
+            Console.Clear();
+            Console.WriteLine("                   ");
+            Console.WriteLine("    /)/)   (\\..../)    (\\(\\ ");
+            Console.WriteLine("  (':' )    (=';'=)    (=':')");
+            Console.WriteLine("(\")(\") )   (\") -- (\")  ( (\")(\")");
+            Parametrs settings = new Parametrs();
+            Sounds exit = new Sounds(settings.GetResourceFolder());
+            exit.Play("exit.mp3");
+            Thread.Sleep(2500);
+            Environment.Exit(1);
+
+
+        }
         public int choice()
         {
 
@@ -26,22 +42,27 @@ namespace Snake
             {
                 Console.Clear();
                 Console.SetCursorPosition(0, 5);
+                Console.WriteLine("------------------");
+                Console.WriteLine(" Large map - L\n Small map - S");
+                Console.WriteLine("------------------");
+                key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.L)
+                {
+                    valik = 101;
+                }
+                if (key.Key == ConsoleKey.S)
+                {
+                    valik = 80;
+                }
+                Console.Clear();
+                Console.SetCursorPosition(0, 5);
             }
             else if (key.Key == ConsoleKey.Q)
             {
-                Console.Clear();
-                Console.WriteLine("          ／＞　 フ");
-                Console.WriteLine("         | 　_　 _|");
-                Console.WriteLine("        ／`ミ _x 彡");
-                Console.WriteLine("       /　　　 　 |");
-                Console.WriteLine("      /　 ヽ　　 ﾉ");
-                Console.WriteLine("　／￣|　　 |　|　|");
-                Console.WriteLine("　| (￣ヽ＿_ヽ_)_)");
-                Console.WriteLine("　＼二つ");
-                Console.Beep();
-                Environment.Exit(1);
+                valik = 2;
             }
             return valik;
+
         }
     }
 }

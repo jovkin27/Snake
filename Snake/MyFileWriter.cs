@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-    class MyFileWriter
+    public class MyFileWriter
     {
-        string name;
-        int score;
-
-        public void WriteNameToFile(string name, int score)
+        public void WriteNameAndScoreToFile(string name, int score)
         {
-
-            using (StreamWriter writer = new StreamWriter("results.txt",true))
+            using (StreamWriter sw = new StreamWriter("results.txt", true))
             {
-                writer.WriteLine(name + score);
+                sw.WriteLine(name + " - " + score.ToString() + " points");
             }
-
-            Console.WriteLine("Имя успешно добавлено в файл.");
-          
         }
+
         public void ShowResults()
         {
-            StreamReader from_file = new StreamReader("results.txt");
-            string text = from_file.ReadToEnd();
-            Console.WriteLine(text);
-            from_file.Close();
+            Console.WriteLine("Results:");
+            Console.WriteLine("--------");
+            using (StreamReader reader = new StreamReader("results.txt"))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
         }
     }
 }

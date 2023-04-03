@@ -9,6 +9,7 @@ namespace Snake
 {
     class Parametrs
     {
+
         private string resourcesFolder;
 
         public Parametrs()
@@ -20,12 +21,14 @@ namespace Snake
                 Directory.GetCurrentDirectory().ToString().Substring(0, ind)
                     .ToString(); // путь до указанной в инкесе папки
 
-            resourcesFolder = binFolder + "resources\\";
+            resourcesFolder = binFolder + "Resources\\";
         }
 
         public string GetResourceFolder()
         {
             return resourcesFolder;
         }
+
+
     }
 }

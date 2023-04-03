@@ -14,7 +14,7 @@ namespace Snake
             pList = new List<Point>();
             for (int y = yLeft; y <= yReight; y++)
             {
-                Point p = new Point(x, y, sym, ConsoleColor.White);
+                Point p = new Point(x, y, sym, ConsoleColor.Magenta);
                 pList.Add(p);
             }
         }

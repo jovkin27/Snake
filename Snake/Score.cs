@@ -17,11 +17,11 @@ namespace Snake
         public int ScoreUp()
         {
             score += 1;
-            return score;
+            return score - 1;
         }
-        public void ScoreWrite()
+        public void ScoreWrite(int lenght, int wide)
         {
-            Console.SetCursorPosition(90, 10);
+            Console.SetCursorPosition(102, 5);
             Console.WriteLine("Score:" + score.ToString());
         }
     }

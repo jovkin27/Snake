@@ -20,7 +20,7 @@ namespace Snake //умения и свойства змейки
             pList = new List<Point>();
             for (int i = 0; i < length; i++)
             {
-                Point p = new Point(tail, ConsoleColor.Blue);
+                Point p = new Point(tail, ConsoleColor.Red);
                 p.Move(i, direction);
                 pList.Add(p);
             }
@@ -64,22 +64,22 @@ namespace Snake //умения и свойства змейки
             if (key == ConsoleKey.LeftArrow)
             {
                 direction = Direction.LEFT;
-                sound.PlayEat();
+                sound.Movement();
             }
             else if (key == ConsoleKey.RightArrow)
             {
                 direction = Direction.RIGHT;
-                sound.PlayEat();
+                sound.Movement();
             }
             else if (key == ConsoleKey.DownArrow)
             {
                 direction = Direction.DOWN;
-                sound.PlayEat();
+                sound.Movement();
             }
             else if (key == ConsoleKey.UpArrow)
             {
                 direction = Direction.UP;
-                sound.PlayEat();
+                sound.Movement();
             }
 
         }
@@ -96,24 +96,6 @@ namespace Snake //умения и свойства змейки
             else
             {
                 return false;
-            }
-        }
-        public class Score
-        {
-            private int score;
-            public Score(int score)
-            {
-                this.score = score;
-            }
-            public int ScoreUp()
-            {
-                score += 1;
-                return score;
-            }
-            public void ScoreWrite()
-            {
-                Console.SetCursorPosition(90, 10);
-                Console.WriteLine("Score:" + score.ToString());
             }
         }
     }    

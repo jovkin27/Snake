@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using WMPLib;
+using System.Media;
 
 namespace Snake
 {
@@ -15,24 +16,31 @@ namespace Snake
 
             pathToMedia = pathToResources;
         }
-
-        public void Play(string sound)
-        {
-            player.URL = pathToMedia + sound;// "stardust.mp3";
-            player.settings.volume = 30;
-            player.controls.play();
-            player.settings.setMode("loop", true); // loop mode
-        }
         public void Stop(string sound)
         {
-            player.URL = pathToMedia + sound + ".mp3";
+            player.URL = pathToMedia + sound;
             player.controls.stop();
         }
-        public void PlayEat()
+        public void Movement()
         {
             player.URL = pathToMedia + "click.mp3";
             player.settings.volume = 40;
             player.controls.play();
         }
+
+        public void Play(string sound)
+        {
+            player.URL = pathToMedia + sound;
+            player.settings.volume = 30;
+            player.controls.play();
+            player.settings.setMode("loop", true);
+        }
+        public void Dead()
+        {
+            player.URL = pathToMedia + "lost.mp3";
+            player.settings.volume = 40;
+            player.controls.play();
+        }
+
     }
 }
