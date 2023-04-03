@@ -29,7 +29,7 @@ namespace Snake
 
 
         }
-        public int choice()
+        public int Choice()
         {
 
             Console.SetCursorPosition(0, 5);

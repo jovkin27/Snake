@@ -12,7 +12,6 @@ namespace Snake //умения и свойства змейки
     class Snake : Figure
     {
         public Direction direction;
-        int Snakescore;
 
         public Snake(Point tail, int length, Direction _direction) //хвост
         {

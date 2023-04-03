@@ -15,7 +15,7 @@ namespace Snake
     class Program //запускающая программа
     {
 
-        public void game_draw(int ymap)
+        public void Game_draw(int ymap)
         {
             Parametrs settings = new Parametrs();
             Sounds sound = new Sounds(settings.GetResourceFolder());
@@ -36,6 +36,7 @@ namespace Snake
 
             Score score = new Score(0);
             score.ScoreWrite(120,10);
+
             while (true)
             {
                 if (walls.Ishit(snake) || snake.IsHitTail())
@@ -98,13 +99,13 @@ namespace Snake
 
             while (true)
             {
-                int ymap = start.choice();
+                int ymap = start.Choice();
                 if (ymap == 101 || ymap == 80)
                 {
                     Program prog = new Program();
-                    prog.game_draw(ymap);
+                    prog.Game_draw(ymap);
                 }
-                else
+                else 
                 {
                     start.Game_stop();
                     break;

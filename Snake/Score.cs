@@ -19,9 +19,9 @@ namespace Snake
             score += 1;
             return score - 1;
         }
-        public void ScoreWrite(int lenght, int wide)
+        public void ScoreWrite(int wide, int lenght)
         {
-            Console.SetCursorPosition(102, 5);
+            Console.SetCursorPosition(wide, lenght);
             Console.WriteLine("Score:" + score.ToString());
         }
     }
